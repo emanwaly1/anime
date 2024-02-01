@@ -15,17 +15,16 @@ export class WishlistComponent {
   }
 
   get(){
-    this.wishServ.getAll().subscribe(res=>{
+    this.wishServ.getAll().subscribe((res: { data: IProduct[]; })=>{
       this.list = res.data
     })
   }
   RemoveFromwishlist(item:IProduct){
-    this.wishServ.remove(item._id).subscribe(res=>{
-      // alert(res.message)
-      // console.log(res);
+    this.wishServ.remove(item._id).subscribe((res: any)=>{
+     
       this.get()
       // this.list = res.data as IProduct[]
-      
+
     })
   }
 }

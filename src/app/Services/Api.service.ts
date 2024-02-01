@@ -8,6 +8,9 @@ import { ILoginUser, IRegisterUser } from '../DataTypes/user';
   providedIn: 'root'
 })
 export class ApiService {
+AddProduct(data: FormData) {
+  throw new Error('Method not implemented.');
+}
 OriginalPath= "http://localhost:5000"
 
 constructor(private Http:HttpClient) { }

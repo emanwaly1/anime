@@ -53,7 +53,7 @@ export class AddProductComponent {
       this.data.append(key, this.form.controls[key].value)
     }
     this.apiServ.AddProduct(this.data).subscribe({
-      next: (responce) => {
+      next: (responce: { success: any; message: any; }) => {
         console.log(responce);
         if(responce.success){
           alert(responce.message)
@@ -66,7 +66,7 @@ export class AddProductComponent {
         }
 
       },
-      error: (err) => {
+      error: (err: any) => {
         console.log(err);
 
       }
